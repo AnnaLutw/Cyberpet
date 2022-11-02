@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+
+
+.body{
+    background-image: url(/img/background.jpg)  ;
+    background-position-x: center;
+}
+
+#area{
+    position:relative;
+    left:22%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
+    display: inline-block;
+    margin-top: 4%;
+    margin-bottom: 5%;  
+    box-shadow: 3px 3px 1px 0px #00000060;
+
+}
+
+#area #form{
+  
+  margin-top: 3%;
+  margin-right: 80px;
+  margin-left: 60px;
+  display: inline-block;
+
+
+}
+.card{
+  position: relative;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #ffb427;
+  box-shadow: 2px 1px 1px 0px #00000060;
+
+}
+
+fieldset
+{
+    width:440px;
+    height:750px;
+    display:inline-block;  
+    
+    
+}
+#opcao{
+  margin-left: 5%;
+}
+
+
+
+/* label float 1 */
+.label-float input {
+    width: 90%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 1px solid #272262;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .2s ease-out;
+    border-radius: 0;
+
+}
+
+#pnt{
+    width: 0px;
+    padding-left: 10px;
+
+}
+
+.ls-custom-select{
+  position: relative;
+  padding-top: 15px;
+  padding-left: 18px;
+}
+.label-float{
+    position: relative;
+    padding-top: 15px;
+    padding-left: 18px;
+    
+}
+.label-float input:focus{
+    border-bottom: 2px solid #4038a0;
+}
+
+.label-float label{
+  color: #272262;
+  pointer-events: none;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: 13px;
+  transition: all .2s ease-out;
+  
+}
+
+
+  #pagamento{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    margin-top: 40px;
+  }
+
+  #pagRealizado{
+    text-align: center;
+    color: #000000;
+    margin-top: 50px;
+  }
+
+#container{
+   
+    display: none;
+}
+
+#pagModelo{
+  text-align: center;
+}
+
+
+.fundo{
+    position:relative;
+    left:16%;
+    width:70%;
+    height:500px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+    margin-bottom: 4%;
+    display: block;
+    box-shadow: 3px 3px 1px 0px #00000060;
+
+
+}
+   
+
+#img{
+    margin-left: 40%;
+    margin-top: 100px;
+    display: block;
+
+
+}
+
+.footer-basic {
+    padding:20px 0;
+    background-color:#790085 ;
+    color:#dee1e3;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  .footer-basic .social > a {
+  
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+  #btn{
+    padding-left: 40%;
+    margin-bottom: 20px;
+  }
+
+  #botao{
+    background-color: #ffb427;
+    size: 50px;
+    display: inline-block;
+    border-radius: 3px;
+    width: 80px;
+    height: 40px;
+    border-style: hidden;
+  }
+
+  .imagem{
+    margin-left: 80px;
+    float: left;
+    margin-top: 4%;
+    display: flex;
+    border-color: black;
+    border-radius: 3%;
+    border-width: 2px;
+    border-style: solid;
+    
+
+  }
+
+img{
+  border-radius: 2%;
+  border-width: 2px;
+  border-style: solid;
+}
+
+input:invalid, textarea:invalid{
+  
+  border-color: rgb(255, 3, 3);
+}
+
+.header{
+  background: #790085;
+}
+.logo {
+  width: 200px;
+}
+
+.nav_area a:hover {
+background: #bb58c6;
+border-radius: 5px;
+
+}
+ul{
+  color: white;
+}
+
