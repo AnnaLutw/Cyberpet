@@ -10,3 +10,23 @@ btn.addEventListener("click",()=>{
     }
 }
 )
+
+logar = function(){
+    const usuario = document.getElementById("usuario").value;
+    const senha = document.getElementById("senha").value;
+
+    const logar{
+        usuario: usuario,
+        senha: senha
+
+    }
+
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8080/api/clientes/save";
+    xhr.onload = sucesso;
+    xhr.oneerror=
+    xhr.open('POST',url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(logar));
+}
+
