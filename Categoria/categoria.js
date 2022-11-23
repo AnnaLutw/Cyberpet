@@ -88,6 +88,8 @@ mostraProdutosPeixe = function () {
     xhr.send();
 
 }
+
+
 preencheProdutos = function (dadosProduto) {
 
     document.querySelector('.card_area1').innerHTML += `

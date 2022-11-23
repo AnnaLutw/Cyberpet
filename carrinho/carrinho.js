@@ -14,22 +14,24 @@ mostrarProdutos = function(dadosProduto){
         </td>
         <td>
             <button onClick="retiraItem('quantItem_${dadosProduto.id}')"> - </button>
-            <label id="quantItem_${dadosProduto.id}"> 0</label>
+            <label id="quantItem_${dadosProduto.id}"> 1</label>
             <button onClick="adcItem('quantItem_${dadosProduto.id}')"> + </button>
         </td>
-        <td onload="precoItem(${dadosProduto.preco})">
+        <td>
             R$ ${dadosProduto.preco}
         </td>
-    <td>
-        R$100,00
-    </td>
+        <td>
+            R$ <label id="precoSubtotal_${dadosProduto.id}"> ${dadosProduto.preco}</label>
+        </td>
 </tr>`;
                  
 }
-
+let produtosCarrinho = [];
 carrega = function(){
+
     let itensCarrinho = getParameterByName("carrinho");
     let itensCarrinhoArray = itensCarrinho.split(',');
+
 
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:8080/api/produtos/findAll";
@@ -40,6 +42,8 @@ carrega = function(){
             if(dadosProdutos.length> 0){
                 for(let i=0; i<dadosProdutos.length; i++){    
                     if(itensCarrinhoArray.indexOf(dadosProdutos[i].id.toString()) != -1){
+                        let produtoCarrinho= {idProduto:dadosProdutos[i].id,qtd:1,produto:dadosProdutos[i]};
+                        produtosCarrinho.push(produtoCarrinho);
                         mostrarProdutos(dadosProdutos[i]);
                     }              
                    
@@ -69,20 +73,26 @@ getParameterByName = function (name, url = window.location.href) {
 }
 
 adcItem = function(id){
-    let valorAtual = document.getElementById(id).innerHTML;
-    valorAtual = parseInt(valorAtual)+ 1;
+    let idProduto = parseInt(id.replace("quantItem_", ""));
+    let produtoCarrinho = produtosCarrinho.filter(p => p.idProduto == idProduto).shift();
+    let valorAtual = document.getElementById("precoSubtotal_" + idProduto).innerHTML;
+    valorAtual = parseFloat(valorAtual)+ produtoCarrinho.produto.preco;
+    document.getElementById("precoSubtotal_" + idProduto).innerHTML = valorAtual;
 
-    document.getElementById(id).innerHTML = valorAtual;
+    document.getElementById(id).innerHTML= parseInt(document.getElementById(id).innerHTML)+1;
 }
 
 retiraItem = function(id){
-    let valorAtual = document.getElementById(id).innerHTML;
-    if(valorAtual > 0 ){
-        valorAtual = parseInt(valorAtual)- 1;
-    }
+    let idProduto = parseInt(id.replace("quantItem_", ""));
+    let produtoCarrinho = produtosCarrinho.filter(p => p.idProduto == idProduto).shift();
+    let valorAtual = document.getElementById("precoSubtotal_" + idProduto).innerHTML;
+    if(valorAtual > 0){
+        valorAtual = parseFloat(valorAtual)-produtoCarrinho.produto.preco;
+        document.getElementById("precoSubtotal_" + idProduto).innerHTML = valorAtual;
     
-
-    document.getElementById(id).innerHTML = valorAtual;
+        document.getElementById(id).innerHTML= parseInt(document.getElementById(id).innerHTML)-1;
+    }
+   
 }
 
 precoItem = function(preco){
