@@ -12,21 +12,30 @@ btn.addEventListener("click",()=>{
 )
 
 logar = function(){
-    const usuario = document.getElementById("usuario").value;
-    const senha = document.getElementById("senha").value;
-
-    const logar{
-        usuario: usuario,
-        senha: senha
-
-    }
+    let usuario = document.querySelector("#usuario").value;
+    let senha = document.querySelector("#senha").value;
 
     let xhr = new XMLHttpRequest();
-    let url = "http://localhost:8080/api/clientes/save";
-    xhr.onload = sucesso;
-    xhr.oneerror=
+    let url = "http://localhost:8080/api/security/login";
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+     
+            let token = xhr.responseText;
+
+            if(token == null || token == ""){
+                alert("Usuario o usenha incorretos");
+            }
+            else{
+                localStorage.setItem ('token', token);
+                window.location.href= "../home-page/Home_Page.html"
+            }
+        }
+
+
+    }
+    
     xhr.open('POST',url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send(JSON.stringify(logar));
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("usuario=" + usuario + "&senha=" + senha);
 }
 
