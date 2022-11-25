@@ -23,7 +23,7 @@ logar = function(){
             let token = xhr.responseText;
 
             if(token == null || token == ""){
-                alert("Usuario o usenha incorretos");
+                alert("Usuario ou usenha incorretos");
             }
             else{
                 localStorage.setItem ('token', token);

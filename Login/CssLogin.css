@@ -129,7 +129,7 @@ p{
     text-align: center;
 }
 
-a{
+.cadastro{
     color: #030303;
     font-weight: bold;
     text-decoration: none;
@@ -144,6 +144,11 @@ a:hover{
     top: 15px;
     right: 10px;
     cursor: pointer;
+    color: #000000;
+}
+
+.esqueciSenha{
+    text-decoration: none;
     color: #000000;
 }
 

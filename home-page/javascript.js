@@ -63,14 +63,14 @@ preencheMelhoresProdutos = function(dadosProduto){
    
         <div class=\"product-card\">
              <div class=\"product-image\">
-                <a href="/produto/produto.html"><img  src=\" ${dadosProduto.imagePath } \" class=\"product-thumb\" alt="">   </a>          
+                <a href="#" onclick="abrirProduto()"><img  src=\" ${dadosProduto.imagePath } \" class=\"product-thumb\" alt="">   </a>          
             </div>
             <div class=\"product-info\">               
                 <h2 class=\"product-brand\">${dadosProduto.nomeProduto }</h2>
                 <p class=\"product-short-description\">${dadosProduto.descricao }</p>
                 <span class=\"price\">R$ ${dadosProduto.preco }</span>
                 <div class="btnCarrinho" onClick="adicionaCarrinho(${dadosProduto.id})">
-                <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>
+                    <a  class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>
                 </div>
             </div>
         </div> `;
@@ -82,13 +82,13 @@ preencheProdutos = function(dadosProduto){
         document.querySelector('.card_area1').innerHTML += `
    
         <div class="col-12 col-sm-12 col-md-3 col-lg-3 rounded card_pd text-center" style="width: 18rem;">
-            <a href="/produto/produto.html"><img src="${dadosProduto.imagePath}" class="card-img-top" alt="..." style="margin-top: 10px;">  </a>
+            <a href="#" onclick="abrirProduto()"><img src="${dadosProduto.imagePath}" class="card-img-top" alt="..." style="margin-top: 10px;">  </a>
             <div class="card-body">
                 <h5 class="card-title">${dadosProduto.nomeProduto }</h5>
                 <p class="card-text">${dadosProduto.descricao }</p>
                 <p><strong>R$ ${dadosProduto.preco }</strong></p>
                 <div class="btnCarrinho" onClick="adicionaCarrinho(${dadosProduto.id})">
-                <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px">+ CARRINHO</a>
+                    <a  class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px">+ CARRINHO</a>
                 </div>
             </div>
         </div>`;
@@ -108,7 +108,4 @@ abrirProduto = function(){
     window.location.href = "/produto/produto.html"
 }
 
-entrarProduto = function(){
-
-}
 

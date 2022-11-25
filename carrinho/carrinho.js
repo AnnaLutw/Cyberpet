@@ -26,6 +26,25 @@ mostrarProdutos = function (dadosProduto) {
 </tr>`;
 
 }
+
+carrinhoVazio = function(){ 
+    document.querySelector('#table').innerHTML +=`
+    <div class='card'>
+    <div class="logo">
+        <img src="/home-page/images1/logoCarrinho.jpg" width="justify-center" height="210">
+    </div>
+
+    <div class="justify-center">
+        <hr>
+    </div>
+    
+    <h1> CARRINHO VAZIO </h1>
+        
+</div>`
+
+}
+
+
 let produtosCarrinho = [];
 carrega = function () {
 
@@ -46,10 +65,13 @@ carrega = function () {
                         produtosCarrinho.push(produtoCarrinho);
                         mostrarProdutos(dadosProdutos[i]);
                     }
-
                 }
+                
             }
-            else {
+            else if(dadosProduto.length == ""){
+                carrinhoVazio();
+            }
+            else  {
                 alert('Produto não encontrado')
             }
         }

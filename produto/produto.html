@@ -22,14 +22,14 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 </head>
-<body class="body">
+<body class="body" onload="mostraProduto()" o>
   <header class="header">
     <!--Navbar-->
     <div class="nav_area">
       
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <a href="/home-page/Home_Page.html"><img src="/img/logo.png" alt="logo" class="logo"></a>
+          <a href="/home-page/Home_Page.html"><img src="/img/logoGorro.png" alt="logo" class="logo"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -86,15 +86,18 @@
     </div>
 </header>    
 <main>
-  <div class="container">
-    <div class="row teste">
-        <div class="col-12 col-sm-6 col-lg-6">
+  <img src="/img/pisca.png"  style="width: 100%;" alt="">
+  <div id="card"></div>
+  <div class="container col-8">
+    <div class="row teste ">
+        <div class="col-lg-6">
             <img class="card-img-top" src="/home-page/Images/produto11.jpeg"  alt="Card image cap">
         </div>
         <div class="col-6">
             <div id="um" class="card-body">
-                <b>  <h5 class="card-title">NOME PRODUTO</h5>
-                  <p  class="card-text"></p>DESCRIÇÃO </b>
+                <b>  <h2 class="card-title">NOME PRODUTO</h2>
+                  <p  class="card-text">DESCRIÇÃO </p></b>
+                  <p  class="card-text">PREÇO</p> 
             </div>            
             <div class="btnCarrinho">
               <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>

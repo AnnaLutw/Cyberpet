@@ -29,9 +29,7 @@ body {
 }
 
 .muchotexto {
-  width: 65%;
-  height: auto;
-  position: relative;
+  width: 90%;
   margin: auto;
   background-color: rgb(254, 255, 244);
   border-radius: 20px;

@@ -255,8 +255,7 @@
   align-items: center;
   cursor: pointer;
   z-index: 8;
-  background-color: rgb(186, 136, 18);
-  background: linear-gradient(100deg, rgba(149, 110, 62, 0) 20%, rgb(231, 176, 58) 120%);
+  background: linear-gradient(100deg, rgba(149, 110, 62, 0) 90%, rgb(231, 176, 58) 120%);
 }
 
 .pre-btn {
@@ -266,6 +265,7 @@
 
 .nxt-btn {
   right: 0;
+ 
 }
 
 .pre-btn img,
@@ -314,6 +314,7 @@
 .btnCarrinho{
   margin-top: 27%;
   width: 100%;
+  position: relative;
 }
 
 .btnCarrinhooutro{

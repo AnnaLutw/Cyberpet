@@ -101,7 +101,7 @@ preencheProdutos = function (dadosProduto) {
             <p class="card-text">${dadosProduto.descricao}</p>
             <p><strong>R$ ${dadosProduto.preco}</strong></p>
             <div class="btnCarrinho" onClick="adicionaCarrinho(${dadosProduto.id})">
-            <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px">+ CARRINHO</a>
+            <a  class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px">+ CARRINHO</a>
             </div>
         </div>
     </div>`;
