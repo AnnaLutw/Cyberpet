@@ -1,24 +1,26 @@
-mostraProduto()
-    const params = new URLSearchParams(location.search)
-    let id = params.get('id');
+mostraProduto = function () {
+
+    let idProduto = getParameterByName("idProduto");
+   
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:8080/api/produtos/findAll";
-    xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE){
-        let dadosProdutos = JSON.parse(xhr.responseText);
-        if(dadosProdutos.length> 0){
-            preencheProdutos(dadosProdutos);
-        }  
-    }      
-    else{
-        alert('Filme não encontrado')
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            let dadosProdutos = JSON.parse(xhr.responseText);
+            if (dadosProdutos.length > 0) {
+                let produto = dadosProdutos.filter(p => p.id == idProduto).shift();
+                preencheProdutos(produto);
+            }
+        }
+        else {
+            alert('Produto não encontrado')
+        }
+        xhr.oneerror =
+            xhr.open('GET', url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send();
     }
-    xhr.oneerror=
-    xhr.open('GET',url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send();
 }
-
 preencheProdutos = function(dadosProduto){
    
    document.querySelector('#card').innerHTML += `
@@ -40,4 +42,14 @@ preencheProdutos = function(dadosProduto){
         </div>
     </div>
   </div>     
-            `;}
+            `;
+}
+getParameterByName = function (name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+

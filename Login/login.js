@@ -20,13 +20,13 @@ logar = function(){
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
      
-            let token = xhr.responseText;
+            let cliente = xhr.responseText;
 
-            if(token == null || token == ""){
+            if(cliente == null || cliente == ""){
                 alert("Usuario ou usenha incorretos");
             }
             else{
-                localStorage.setItem ('token', token);
+                localStorage.setItem ('cliente', cliente);
                 window.location.href= "../home-page/Home_Page.html"
             }
         }

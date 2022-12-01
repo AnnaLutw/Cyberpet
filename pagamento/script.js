@@ -102,61 +102,22 @@ pagamento.addEventListener("mouseover", (event) => {
 }, false);
 
 
+inicializarPagina = function(){
 
-mostrarProdutos = function (dadosProduto) {
+    let cliente = JSON.parse(localStorage.getItem('cliente'));
+    document.getElementById('fname').value = cliente.nomeCompleto;
+    document.getElementById('lnum').value = cliente.telefone;
+    document.getElementById('endereco').value = cliente.endereco;
+    document.getElementById('complemento').value = cliente.complemento;
 
-    document.querySelector('.itemPagamento').innerHTML += `
-   
-    <td>
-        <div class="card" style="width: 18rem;">              
-            <img class="card-img-top" src="../home-page/${dadosProduto.imagePath}" alt="Card image cap">                
-            <div class="card-body">
-                <h5 class="card-title">${dadosProduto.nomeProduto}</h5>
-                <p class="card-text">${dadosProduto.descricao}</p>
-            </div>               
-        </div>
-      </td>`;
-
-}
-
-carrega = function () {
-    let itensCarrinho = getParameterByName("carrinho");
-    let itensCarrinhoArray = itensCarrinho.split(',');
-
-    let xhr = new XMLHttpRequest();
-    let url = "http://localhost:8080/api/produtos/findAll";
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-
-            dadosProdutos = JSON.parse(xhr.responseText);
-            if (dadosProdutos.length > 0) {
-                for (let i = 0; i < dadosProdutos.length; i++) {
-                    if (itensCarrinhoArray.indexOf(dadosProdutos[i].id.toString()) != -1) {
-                        mostrarProdutos(dadosProdutos[i]);
-                    }
-
-                }
-            }
-            else {
-                alert('Produto não encontrado')
-            }
-        }
-
-
+    if(cliente != null || cliente != ""){
+        document.getElementById('loginUser').innerHTML = cliente.usuario;
     }
-    xhr.oneerror =
-        xhr.open('GET', url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send();
-
+    else{
+        document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
+    }
 }
 
-getParameterByName = function (name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+
+
 
