@@ -133,5 +133,5 @@ sucesso = (data)=>{
    // let dadosHTML =' ';
   //  let dadosFilmes = JSON.parse(data.target.response)
   alert("Usuario cadastrado com sucesso");
-  window.location.href = "/index.html";  
+  window.location.href = "/Login/HtmlLogin.html";  
 }

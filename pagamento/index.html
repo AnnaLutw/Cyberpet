@@ -54,16 +54,6 @@
                   <a style="color :white" class="nav-link active" aria-current="page"
                     href="/home-page/Home_Page.html">HOME</a>
                 </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="/agendamento/agendamento.html">AGENDAMENTOS</a>
-                </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="/vacinas/vacinas.html">VACINAS</a>
-
-                </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
-                </li>
                 <li class="nav-item dropdown">
                   <a style="color :white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,23 +71,53 @@
                     <li><a class="dropdown-item" href="/Categoria/cão.html">Cachorros</a></li>
                   </ul>
                 </li>
+                <li class="nav-item">
+                  <a style="color :white" class="nav-link" href="/agendamento/agendamento.html">AGENDAMENTOS</a>
                 </li>
                 <li class="nav-item">
-                  <span id="loginUser"></span>                
+                  <a style="color :white" class="nav-link" href="/vacinas/vacinas.html">VACINAS</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
+                </li>
+
+                <li class="nav-item dropdown" style="margin-left:30px ;">
+                  <a style="color :white" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/img/logoUsuarioo.png" width="30px" alt="">
+                    <span id="loginUser"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <li><a class="dropdown-item" href="#">PEDIDOS</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">SAIR</a></li>
+
+                  </ul>
                 </li>
               </ul>
             </div>
-            <nav class="d-flex navbar navbar-light rounded" style="background-color: #bb58c6;">
-              <div class="container-fluid">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
-                  <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
-                </form>
-              </div>
-            </nav>
           </div>
+          <!--Barra de pesquisa-->
+          <nav class="d-flex navbar navbar-light rounded" style="background-color: #bb58c6;">
+            <div class="container-fluid">
+              <form class="d-flex" id="formularioPesquisa">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
+                <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
+              </form>
+            </div>
+          </nav>
+          <div class="btnCarrinhooutro">
+            <span id="quantItem" style="position: relative ; top: -10px;left: 33px; color: black;">0</span>
+            <a href="#" onclick="abrirCarrinho()" class="btn btn-warning"> <img class="imgCarrinho"
+                src="/home-page/images1/logoCarrinho.jpg" width="30px"> CARRINHO</a>
+          </div>
+        </div>
       </nav>
     </div>
+
   </header>
   <img src="/img/pisca.png"  style="width: 100%;" alt="">
   <div class="container" id="area">
@@ -198,7 +218,18 @@
                     <option value="2024">2027</option>
                     <option value="2024">2028</option>
                   </select>
+                  <span style="margin-left:60px ;">Parcerlamento</span>
+  
+                  <select class="ls-select" name="mes" onchange="verifica()" id="mes">
+                    <option value="2024">1x de R$10</option>
+                    <option value="2024">2x de R$10</option>  
+                    <option value="2024">3x de R$10</option>
+                    <option value="2024">4x de R$10</option>
+                    <option value="2024">5x de R$10</option>
+                    <option value="2024">6x de R$10</option>                
+                  </select>
                 </div> <br>
+                
               </form>
             </div>
             <form id="btn">
@@ -214,9 +245,9 @@
   <div class="footer-basic">
     <footer>
       <div class="social">
-        <a href="#"><img src="img/loog instagram.png" width="50px" class="bi bi-instagram"></a>
-        <a href="#"><img src="img/logo facebook.png" width="50px" class="bi bi-facebook"></a>
-        <a href="#"><img src="img/logo twitter.png" width="50px" class="bi bi-twitter"></a>
+        <a href="#"><img src="/img/loog instagram.png" width="50px" class="bi bi-instagram"></a>
+        <a href="#"><img src="/img/logo facebook.png" width="50px" class="bi bi-facebook"></a>
+        <a href="#"><img src="/img/logo twitter.png" width="50px" class="bi bi-twitter"></a>
       </div>
 
       <ul class="list-inline">

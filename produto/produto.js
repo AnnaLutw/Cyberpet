@@ -1,10 +1,11 @@
 mostraProduto = function () {
-
+    debugger;
     let idProduto = getParameterByName("idProduto");
    
     let xhr = new XMLHttpRequest();
     let url = "http://localhost:8080/api/produtos/findAll";
     xhr.onreadystatechange = function () {
+        
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let dadosProdutos = JSON.parse(xhr.responseText);
             if (dadosProdutos.length > 0) {
@@ -16,7 +17,7 @@ mostraProduto = function () {
             alert('Produto não encontrado')
         }
         xhr.oneerror =
-            xhr.open('GET', url, true);
+        xhr.open('GET', url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send();
     }
@@ -53,3 +54,13 @@ getParameterByName = function (name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+mostrarUsuario = function(){
+    
+    let cliente = JSON.parse(localStorage.getItem('cliente'));
+    if(cliente != null || cliente != ""){
+        document.getElementById('loginUser').innerHTML = cliente.usuario;
+    }
+    else{
+        document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
+    }
+}

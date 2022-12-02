@@ -117,7 +117,9 @@ inicializarPagina = function(){
         document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
     }
 }
-
-
-
+pesquisarProduto = function(e){
+    console.log('Tetse');;
+    e.preventDefault();
+}
+document.getElementById('formularioPesquisa').addEventListener('submit', pesquisarProduto);
 

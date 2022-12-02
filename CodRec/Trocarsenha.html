@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="imagem/png" href="logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Trocarsenha.css" media="screen" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <div class='card'>
+            
+            <h1> Cadastrar Nova Senha </h1>
+
+            <div class='label-float'>
+                <input type="password" id="senha" placeholder="" required>
+                <label id="labelsenha" for="senha">Nova senha </label>
+                <i id="vsenha" class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+
+            <div class='label-float'>
+                <input type="password" id="confirmarsenha" placeholder="" required>
+                <label id="labelconfirmarsenha" for="confirmarsenha"> Confirmar senha </label>
+                <i id="vconfirmarsenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+
+            <div class="justify-center"> 
+                <button onclick="cadastrar()"> Cadastrar Senha </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Trocarsenha.js"></script>
+</body>
+
+</html>

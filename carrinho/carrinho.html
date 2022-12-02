@@ -13,7 +13,7 @@
   <script src="carrinho.js"></script>
 </head>
 
-<body onload="carrega()">
+<body onload="carrega(); mostrarUsuario()">
   <header class="header">
     <!--Navbar-->
     <div class="nav_area">
@@ -33,15 +33,6 @@
                   <a style="color :white" class="nav-link active" aria-current="page"
                     href="/home-page/Home_Page.html">HOME</a>
                 </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="/agendamento/agendamento.html">AGENDAMENTOS</a>
-                </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="/vacinas/vacinas.html">VACINAS</a>
-                </li>
-                <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
-                </li>
                 <li class="nav-item dropdown">
                   <a style="color :white" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,11 +50,32 @@
                     <li><a class="dropdown-item" href="/Categoria/cão.html">Cachorros</a></li>
                   </ul>
                 </li>
-
                 <li class="nav-item">
-                  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>
+                  <a style="color :white" class="nav-link" href="/agendamento/agendamento.html">AGENDAMENTOS</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color :white" class="nav-link" href="/vacinas/vacinas.html">VACINAS</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
                 </li>
 
+                <li class="nav-item dropdown" style="margin-left:30px ;">
+                  <a style="color :white" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/img/logoUsuarioo.png" width="30px" alt="">
+                    <span id="loginUser"></span>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <li><a class="dropdown-item" href="#">PEDIDOS</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">SAIR</a></li>
+
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
@@ -84,8 +96,9 @@
         </div>
       </nav>
     </div>
+
   </header>
-  <img src="/img/pisca.png"  style="width: 100%;" alt="">
+  <img src="/img/pisca.png" style="width: 100%;" alt="">
   <div class="container">
     <div class="row">
       <table id="table">

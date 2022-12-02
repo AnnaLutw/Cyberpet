@@ -223,7 +223,7 @@ fieldset {
 }
 
 .card {
-  margin-left: 260px;
+  margin-left: 281px;
   float: left;
   margin-top: 4%;
   border-color: black;
@@ -262,4 +262,15 @@ textarea:invalid {
 
 ul {
   color: white;
+}
+.btnCarrinhooutro{
+  margin-left: 7% ;
+  color: white;
+  margin-right: 3%;
+  
+}
+  
+.imgCarrinho{
+  margin-top: 11px;
+  margin-left: -4px;
 }
