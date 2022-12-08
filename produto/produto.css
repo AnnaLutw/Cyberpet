@@ -94,3 +94,109 @@
     margin-top: 11px;
     margin-left: -4px;
   }
+  /*----------------------MODAL---------------------*/
+.btnOpenModal {
+   
+  border: none;
+  background-color: white;
+  
+}
+
+
+.modal-container {
+  width: 40vw;
+  position: fixed;
+  top: 30px;
+  display: none;
+  z-index: 999;
+  
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  width: 40%;
+  height: 35%;
+  margin-top: 129px;
+  margin-left: 600px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 1px 0px #00000060;
+  font-size:x-large;
+}
+
+.active {
+  display: flex;
+  
+}
+
+.active .modal {
+  animation: modal .4s;
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+
+}
+
+.btns button {
+  font-size: medium;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.btnClose {
+  background-color:#ffc107!important;
+ }
+
+ @media (max-width: 500px) {
+  .modal {
+    padding: 10px;
+    width: 80%;
+  }   
+
+  span, .btns button {
+    font-size: smaller;
+  }
+ }
+.modalHead{
+background-color: #aaa;
+display: flex;
+flex-direction: column;
+border: 1px solid #000000;
+width: 100%;
+
+}
+.modalInfo{
+background-color: rgb(214, 214, 214);
+border: 1px solid #000000;
+display: flex;
+flex-direction: column;
+width: 100%;
+
+
+}
+ /*-------------------------------------------*/
+
+ .imgProduto{
+  border-color: #000000;
+ }

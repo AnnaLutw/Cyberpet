@@ -44,8 +44,6 @@ const ano = document.getElementById("ano")
 const pixId = document.getElementById("pixId");
 
 
-console.log(botao);
-console.log(nomee);
 
 var nomee = nome.value;
 
@@ -123,3 +121,36 @@ pesquisarProduto = function(e){
 }
 document.getElementById('formularioPesquisa').addEventListener('submit', pesquisarProduto);
 
+pagar = function(){
+    let cliente = JSON.parse(localStorage.getItem('cliente'));
+    let produtosCarrinho = JSON.parse(localStorage.getItem('produtosCarrinho'));
+
+    let compra = {
+        'endereco': cliente.endereco ,
+        'complemento': cliente.complemento,
+        'telefone': cliente.telefone,
+        'usuario' :{'id': cliente.id},
+        'produtos': []
+        }
+
+    for(let i=0; i<produtosCarrinho.length; i++){
+        let produtoCarrinho = produtosCarrinho[i];
+        compra.produtos.push({'produto':  {'id' : produtoCarrinho.idProduto}, 'quantProduto': produtoCarrinho.qtd, 'precoProduto': produtoCarrinho.produto.preco})
+    }
+    console.log(compra);   
+
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8080/api/compras/save";
+    xhr.onload = sucesso;
+    xhr.oneerror=
+    xhr.open('POST',url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("auth-token", cliente.token);
+    xhr.send(JSON.stringify(compra));
+}
+
+sucesso = (data)=>{
+
+   alert("Compra efetuada com sucesso");
+   window.location.href = "/pagamento/pagamentoConcluido.html";  
+ }

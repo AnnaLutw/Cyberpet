@@ -134,3 +134,19 @@ mostrarUsuario = function(){
         document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
     }
 }
+
+const modal = document.querySelector('.modal-container')
+
+function openModal() {
+  modal.classList.add('active')
+}
+
+function closeModal() {
+  modal.classList.remove('active')
+}
+
+mudarPagamento = function(){
+    localStorage.setItem('produtosCarrinho', JSON.stringify(produtosCarrinho));   
+
+    window.location.href = '/pagamento/index.html';
+}

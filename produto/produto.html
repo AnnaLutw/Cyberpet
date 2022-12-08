@@ -78,11 +78,8 @@
                     <span id="loginUser"></span>
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li> <span class="dropdown-item" id="loginUser"></span> </li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">PEDIDOS</a></li>
+                    
+                    <li><button class="btnOpenModal" onclick="openModal()"><a class="dropdown-item" href="#">PEDIDOS</a></li></button>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
@@ -112,29 +109,41 @@
     </div>
 
   </header>
+  <div class="modal-container">
+    <div class="modal" >
+      <h2>Historico pedidos</h2>
+      <div>   
+        <div class="modalHead">       
+          <header >
+            <table>
+              <th style="width: 25%;">Nome do produto</th>
+              <th style="width: 25%;">Categoria</th>
+              <th style="width: 25%;">id compra</th>   
+              <th style="width: 25%;">Quantidade</th> 
+            </table>        
+          </header> 
+        </div>            
+        <div class="modalInfo">  
+          <tr>
+            <table>
+              <td style="width: 25%;">Ração</td>
+              <td style="width: 25%;">Gato</td>
+              <td style="width: 25%;">345456</td>
+              <td style="width: 25%;">4</td>
+            </table> 
+          </tr>        
+        </div>  
+        <div class="btns">
+          <button class="btnClose" onclick="closeModal()">FECHAR</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
   <main>
     <img src="/img/pisca.png" style="width: 100%;" alt="">
     <div id="card"></div>
-    <div class="container col-8">
-      <div class="row teste ">
-        <div class="col-lg-6">
-          <img class="card-img-top" src="/home-page/Images/produto11.jpeg" alt="Card image cap">
-        </div>
-        <div class="col-6">
-          <div id="um" class="card-body">
-            <b>
-              <h2 class="card-title">NOME PRODUTO</h2>
-              <p class="card-text">DESCRIÇÃO </p>
-            </b>
-            <p class="card-text">PREÇO</p>
-          </div>
-          <div class="btnCarrinho">
-            <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+   
 
   </main>
   <div class="footer-basic">

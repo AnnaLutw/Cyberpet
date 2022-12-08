@@ -1,5 +1,5 @@
 mostraProduto = function () {
-    debugger;
+   
     let idProduto = getParameterByName("idProduto");
    
     let xhr = new XMLHttpRequest();
@@ -13,14 +13,12 @@ mostraProduto = function () {
                 preencheProdutos(produto);
             }
         }
-        else {
-            alert('Produto não encontrado')
-        }
-        xhr.oneerror =
-        xhr.open('GET', url, true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send();
+        
     }
+    xhr.oneerror =
+    xhr.open('GET', url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send();
 }
 preencheProdutos = function(dadosProduto){
    
@@ -28,14 +26,14 @@ preencheProdutos = function(dadosProduto){
 
    <div class="container col-8">
     <div class="row teste ">
-        <div class="col-lg-6">
+        <div class="imgProduto col-lg-6">
             <img class="card-img-top" src="../home-page/${dadosProduto.imagePath}"  alt="Card image cap">
         </div>
         <div class="col-6">
             <div id="um" class="card-body">
                 <b>  <h2 class="card-title">${dadosProduto.nomeProduto}</h2>
                   <p  class="card-text">${dadosProduto.descricao} </p></b>
-                  <p  class="card-text">${dadosProduto.preco}</p> 
+                  <p  class="card-text"> R$ ${dadosProduto.preco}</p> 
             </div>            
             <div class="btnCarrinho">
               <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>
@@ -64,3 +62,14 @@ mostrarUsuario = function(){
         document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
     }
 }
+
+const modal = document.querySelector('.modal-container')
+
+function openModal() {
+  modal.classList.add('active')
+}
+
+function closeModal() {
+  modal.classList.remove('active')
+}
+
