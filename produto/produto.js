@@ -24,23 +24,25 @@ preencheProdutos = function(dadosProduto){
    
    document.querySelector('#card').innerHTML += `
 
-   <div class="container col-8">
-    <div class="row teste ">
-        <div class="imgProduto col-lg-6">
-            <img class="card-img-top" src="../home-page/${dadosProduto.imagePath}"  alt="Card image cap">
-        </div>
-        <div class="col-6">
+<div class="container">
+    <div class="row teste " style="justify-content: space-evenly;">
+        <div class="imgProduto">
+            <img class="card-img-top"  src="../home-page/${dadosProduto.imagePath}"  alt="Card image cap">
+         </div>      
+        <div class="cardInfo" style="width:30%; height:30%;  margin-top: 150px;"  >
             <div id="um" class="card-body">
-                <b>  <h2 class="card-title">${dadosProduto.nomeProduto}</h2>
-                  <p  class="card-text">${dadosProduto.descricao} </p></b>
-                  <p  class="card-text"> R$ ${dadosProduto.preco}</p> 
+                <b>  
+                    <h2 class="card-title">${dadosProduto.nomeProduto}</h2>
+                    <p  class="card-text">${dadosProduto.descricao} </p>
+                </b>
+                <p  class="card-text"> R$ ${dadosProduto.preco}</p> 
             </div>            
-            <div class="btnCarrinho">
-              <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>
+            <div class="btnCarrinho" onClick="adicionaCarrinho(${dadosProduto.id})">
+                <a href="#" class="btn btn-warning"> <img src="/home-page/images1/logoCarrinho.jpg" width="30px"> + CARRINHO </a>
             </div>    
-        </div>
+        </div>     
     </div>
-  </div>     
+</div>     
             `;
 }
 getParameterByName = function (name, url = window.location.href) {
@@ -50,6 +52,17 @@ getParameterByName = function (name, url = window.location.href) {
     if (!results) return null;
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+let dadosProdutos = [];
+let carrinho = [];
+adicionaCarrinho = function(idProduto){
+
+    carrinho.push(idProduto);
+
+    document.getElementById("quantItem").innerHTML = carrinho.length;
+}
+abrirCarrinho = function(){
+    window.location.href = "/carrinho/carrinho.html?carrinho=" + carrinho;
 }
 
 mostrarUsuario = function(){

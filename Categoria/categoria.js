@@ -95,7 +95,7 @@ preencheProdutos = function (dadosProduto) {
     document.querySelector('.card_area1').innerHTML += `
 
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 rounded card_pd text-center" style="width: 18rem;">
-        <a href="/produto/produto.html"><img src="../home-page/${dadosProduto.imagePath}" class="card-img-top" alt="..." style="margin-top: 10px;">  </a>
+        <a href="#" onclick="abrirProduto(${dadosProduto.id})"><img src="../home-page/${dadosProduto.imagePath}" class="card-img-top" alt="..." style="margin-top: 10px;">  </a>
         <div class="card-body">
             <h5 class="card-title">${dadosProduto.nomeProduto}</h5>
             <p class="card-text">${dadosProduto.descricao}</p>
@@ -119,6 +119,12 @@ adicionaCarrinho = function (idProduto) {
 abrirCarrinho = function () {
     window.location.href = "/carrinho/carrinho.html?carrinho=" + carrinho;
 }
+abrirProduto = function(idProduto){
+   
+    window.location.href = "/produto/produto.html?idProduto="+ idProduto;
+
+}
+
 mostrarUsuario = function(){
     
     let cliente = JSON.parse(localStorage.getItem('cliente'));

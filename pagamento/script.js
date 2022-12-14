@@ -101,8 +101,13 @@ pagamento.addEventListener("mouseover", (event) => {
 
 
 inicializarPagina = function(){
-
-    let cliente = JSON.parse(localStorage.getItem('cliente'));
+    let clienteString = localStorage.getItem('cliente');
+    if(clienteString == undefined){
+        alert("Favor Realizar o login");
+        window.location.href = '../Login/HtmlLogin.html';
+        return;
+    }
+    let cliente = JSON.parse(clienteString);
     document.getElementById('fname').value = cliente.nomeCompleto;
     document.getElementById('lnum').value = cliente.telefone;
     document.getElementById('endereco').value = cliente.endereco;

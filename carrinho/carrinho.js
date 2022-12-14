@@ -146,7 +146,11 @@ function closeModal() {
 }
 
 mudarPagamento = function(){
-    localStorage.setItem('produtosCarrinho', JSON.stringify(produtosCarrinho));   
+    if(validaConta()){
+        localStorage.setItem('produtosCarrinho', JSON.stringify(produtosCarrinho));   
 
-    window.location.href = '/pagamento/index.html';
+        window.location.href = '/pagamento/index.html';
+    }
+    
+    
 }

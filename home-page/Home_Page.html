@@ -17,7 +17,7 @@
   <script src="https://kit.fontawesome.com/cadd83334d.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="body" onload="mostraProdutos(); mostrarUsuario()">
+<body class="body" onload="mostraProdutos();init(); mostrarUsuario()">
   <!--Cabeçalho-->
  <header class="header">
     <!--Navbar-->
@@ -64,23 +64,9 @@
                 <li class="nav-item">
                   <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
                 </li>
-
-                <li class="nav-item dropdown" style="margin-left:30px ;">
-                  <a style="color :white" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="/img/logoUsuarioo.png" width="30px" alt="">
-                    <span id="loginUser"></span>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    
-                    <li><button class="btnOpenModal" onclick="openModal()"><a class="dropdown-item" href="#">PEDIDOS</a></li></button>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">SAIR</a></li>
-
-                  </ul>
-                </li>
+                <span id="loginSpan"></span>
+                
+               
               </ul>
             </div>
           </div>
@@ -222,6 +208,8 @@
   </div>
 
   <script src="homepageJs.js"></script>
+  <script src="../comum/comum.js"></script>
+
   <!--Boostrao Pooper-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

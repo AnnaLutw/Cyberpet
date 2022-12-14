@@ -104,6 +104,7 @@ adicionaCarrinho = function(idProduto){
 abrirCarrinho = function(){
     window.location.href = "/carrinho/carrinho.html?carrinho=" + carrinho;
 }
+
 abrirProduto = function(idProduto){
    
     window.location.href = "/produto/produto.html?idProduto="+ idProduto;
@@ -112,9 +113,13 @@ abrirProduto = function(idProduto){
 
 mostrarUsuario = function(){
     
-    let cliente = JSON.parse(localStorage.getItem('cliente'));
-    if(cliente != null || cliente != ""){
-        document.getElementById('loginUser').innerHTML = cliente.usuario;
+    let clienteString = localStorage.getItem('cliente');
+    if(clienteString != undefined && clienteString != 'undefined'){
+        let cliente = JSON.parse(clienteString);
+        if(cliente != null && cliente != "" ){
+      
+            document.getElementById('loginUser').innerHTML = cliente.usuario;
+        }
     }
     else{
         document.getElementById('loginUser').innerHTML = '  <a style="color :white" class="nav-link" href="/Login/HtmlLogin.html">LOGIN</a>';
