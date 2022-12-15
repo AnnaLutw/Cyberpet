@@ -39,3 +39,54 @@ validaConta = function(){
     }
    return true;
 }
+
+exibirPedidos = function(){
+    let cliente = JSON.parse(localStorage.getItem('cliente'));
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8080/api/compras/findAll";
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+
+            dadosCompras = JSON.parse(xhr.responseText);
+            if (dadosCompras.length > 0) {
+                for (let i = 0; i < dadosCompras.length; i++) {
+                    let dadosCompra =dadosCompras[i];
+                    for(let k =0; k<dadosCompra.produtos.length; k++){
+                        let produtoCompra= dadosCompra.produtos[k];
+                        document.getElementById('infoCompras').innerHTML +=
+                        `<tr>
+                            <td style="width: 25%;">${produtoCompra.produto.nomeProduto}</td>
+                            <td style="width: 25%;">${produtoCompra.produto.categoria}</td>
+                            <td style="width: 25%;">${dadosCompra.id}</td>
+                            <td style="width: 25%;">${produtoCompra.quantProduto}</td>
+                        </tr>`
+                    }            
+                }
+                
+            }
+            else if(dadosCompras.length == ""){
+                carrinhoVazio();
+            }
+            else  {
+                alert('Compra não encontrado')
+            }
+        }
+
+
+    }
+    xhr.oneerror =
+    xhr.open('GET', url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("auth-token", cliente.token);
+    xhr.send();
+   
+}
+function openModal() {
+    modal.classList.add('active')
+    exibirPedidos();
+  }
+  
+  function closeModal() {
+    modal.classList.remove('active')
+  }
+  

@@ -71,14 +71,7 @@
             </div>
           </div>
           <!--Barra de pesquisa-->
-          <nav class="d-flex navbar navbar-light rounded" style="background-color: #bb58c6;">
-            <div class="container-fluid">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
-                <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
-              </form>
-            </div>
-          </nav>
+          
           <div class="btnCarrinhooutro">
             <span id="quantItem" style="position: relative ; top: -10px;left: 33px; color: black;">0</span>
             <a href="#" onclick="abrirCarrinho()" class="btn btn-warning"> <img class="imgCarrinho"
@@ -96,20 +89,19 @@
         <div class="modalHead">       
           <header >
             <table>
-              <th style="width: 25%;">Nome do produto</th>
-              <th style="width: 25%;">Categoria</th>
-              <th style="width: 25%;">id compra</th>   
-              <th style="width: 25%;">Quantidade</th> 
+              <tr>
+                <th style="width: 25%;">Nome do produto</th>
+                <th style="width: 25%;">Categoria</th>
+                <th style="width: 25%;">id compra</th>   
+                <th style="width: 25%;">Quantidade</th> 
+              </tr>
             </table>        
           </header> 
         </div>            
         <div class="modalInfo">  
           <tr>
-            <table>
-              <td style="width: 25%;">Ração</td>
-              <td style="width: 25%;">Gato</td>
-              <td style="width: 25%;">345456</td>
-              <td style="width: 25%;">4</td>
+            <table id="infoCompras">
+              
             </table> 
           </tr>        
         </div>  

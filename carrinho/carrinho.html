@@ -15,7 +15,7 @@
 
 </head>
 
-<body onload="carrega(); mostrarUsuario();init()">
+<body onload="carrega();init() ; mostrarUsuario();">
   <header class="header">
     <!--Navbar-->
     <div class="nav_area">
@@ -61,35 +61,14 @@
                 <li class="nav-item">
                   <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
                 </li>
-
-                <li class="nav-item dropdown" style="margin-left:30px ;">
-                  <a style="color :white" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="/img/logoUsuarioo.png" width="30px" alt="">
-                    <span id="loginUser"></span>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    
-                    <li><button class="btnOpenModal" onclick="openModal()"><a class="dropdown-item" href="#">PEDIDOS</a></li></button>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">SAIR</a></li>
-
-                  </ul>
-                </li>
+                <span id="loginSpan"></span>
+                
+               
               </ul>
             </div>
           </div>
           <!--Barra de pesquisa-->
-          <nav class="d-flex navbar navbar-light rounded" style="background-color: #bb58c6;">
-            <div class="container-fluid">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
-                <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
-              </form>
-            </div>
-          </nav>
+          
           <div class="btnCarrinhooutro">
             <span id="quantItem" style="position: relative ; top: -10px;left: 33px; color: black;">0</span>
             <a href="#" onclick="abrirCarrinho()" class="btn btn-warning"> <img class="imgCarrinho"

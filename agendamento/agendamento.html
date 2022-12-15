@@ -11,12 +11,12 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body onload="mostrarUsuario()">
+<body onload="init(); mostrarUsuario(); ">
   <div class="fundo">
     <header class="header">
       <!--Navbar-->
       <div class="nav_area">
-
+  
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid">
             <a href="/home-page/Home_Page.html"><img src="/img/logoGorro.png" alt="logo" class="logo"></a>
@@ -58,35 +58,14 @@
                   <li class="nav-item">
                     <a style="color :white" class="nav-link" href="#">QUEM SOMOS</a>
                   </li>
-
-                  <li class="nav-item dropdown" style="margin-left:30px ;">
-                    <a style="color :white" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="/img/logoUsuarioo.png" width="30px" alt="">
-                      <span id="loginUser"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><button class="btnOpenModal" onclick="openModal()"><a class="dropdown-item"
-                            href="#">PEDIDOS</a></li></button>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">SAIR</a></li>
-
-                    </ul>
-                  </li>
+                  <span id="loginSpan"></span>
+                  
+                 
                 </ul>
               </div>
             </div>
             <!--Barra de pesquisa-->
-            <nav class="d-flex navbar navbar-light rounded" style="background-color: #bb58c6;">
-              <div class="container-fluid">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar">
-                  <button class="btn btn-outline-warning" type="submit">Pesquisar</button>
-                </form>
-              </div>
-            </nav>
+            
             <div class="btnCarrinhooutro">
               <span id="quantItem" style="position: relative ; top: -10px;left: 33px; color: black;">0</span>
               <a href="#" onclick="abrirCarrinho()" class="btn btn-warning"> <img class="imgCarrinho"
@@ -95,7 +74,7 @@
           </div>
         </nav>
       </div>
-
+  
     </header>
   </div>
 <div class="modal-container">
@@ -168,6 +147,7 @@
 
   <!--Boostrao Pooper -->
   <script src="agendamento.js"></script>
+  <script src="../comum/comum.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>

@@ -79,7 +79,7 @@ carrega = function () {
 
     }
     xhr.oneerror =
-        xhr.open('GET', url, true);
+    xhr.open('GET', url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
 
